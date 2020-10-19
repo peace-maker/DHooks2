@@ -6,7 +6,7 @@
 // Needed for the SDKFuncConfSource enum.
 #include <sdktools>
 
-#define INVALID_HOOK_ID -1
+#define INVALID_HOOK_ID 0
 
 enum ObjectValueType
 {
