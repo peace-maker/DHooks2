@@ -27,6 +27,6 @@ def CopyFiles(src, dest, files):
     source_path = os.path.join(builder.sourcePath, src, source_file)
     builder.AddCopy(source_path, dest_entry)
 
-CopyFiles('sourcemod/scripting', 'addons/sourcemod/scripting', ['dhooks-test.sp'])
-CopyFiles('sourcemod/scripting/include', 'addons/sourcemod/scripting/include', ['dhooks.inc'])
-CopyFiles('sourcemod/gamedata', 'addons/sourcemod/gamedata', ['dhooks-test.games.txt'])
+CopyFiles('sourcemod_files/scripting', 'addons/sourcemod/scripting', ['dhooks-test.sp'])
+CopyFiles('sourcemod_files/scripting/include', 'addons/sourcemod/scripting/include', ['dhooks.inc'])
+CopyFiles('sourcemod_files/gamedata', 'addons/sourcemod/gamedata', ['dhooks-test.games.txt'])
