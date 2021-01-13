@@ -92,6 +92,7 @@ CHook::CHook(void* pFunc, ICallingConvention* pConvention)
 CHook::~CHook()
 {
 	// Copy back the previously copied bytes
+	SetMemPatchable(m_pFunc, JMP_SIZE);
 	copy_bytes((unsigned char *) m_pTrampoline, (unsigned char *) m_pFunc, JMP_SIZE);
 
 	// Free the trampoline array
