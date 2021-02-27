@@ -749,12 +749,16 @@ cell_t Native_SetReturn(IPluginContext *pContext, const cell_t *params)
 			break;
 		case ReturnType_CBaseEntity:
 		{
-			CBaseEntity *pEnt = gamehelpers->ReferenceToEntity(params[2]);
-			if(!pEnt)
-			{
-				return pContext->ThrowNativeError("Invalid entity index passed for return value");
+			if(params[2] == -1) {
+				returnStruct->newResult = nullptr;
+			} else {
+				CBaseEntity *pEnt = gamehelpers->ReferenceToEntity(params[2]);
+				if(!pEnt)
+				{
+					return pContext->ThrowNativeError("Invalid entity index passed for return value");
+				}
+				returnStruct->newResult = pEnt;
 			}
-			returnStruct->newResult = pEnt;
 			break;
 		}
 		case ReturnType_Edict:
